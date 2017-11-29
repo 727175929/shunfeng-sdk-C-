@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4415062-7FCB-4AC9-AD1C-2BC7B6D65077}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <AssemblyName>WindowsFormsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\赵轩\Desktop\顺丰接口网上示例\官方提供\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="openapi\common\dto\AccessTokenReqDto.cs" />
+    <Compile Include="openapi\common\dto\TokenQueryRespDto.cs" />
+    <Compile Include="openapi\common\entity\BaseEntity.cs" />
+    <Compile Include="openapi\common\entity\HeadMessageReq.cs" />
+    <Compile Include="openapi\common\entity\HeadMessageResp.cs" />
+    <Compile Include="openapi\common\entity\MessageReq!1.cs" />
+    <Compile Include="openapi\common\entity\MessageResp!1.cs" />
+    <Compile Include="openapi\common\util\HttpWebUtils.cs" />
+    <Compile Include="openapi\common\util\JsonHelper.cs" />
+    <Compile Include="openapi\common\util\SFOpenClient.cs" />
+    <Compile Include="openapi\express\sample\order\dto\AddedServiceDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\CargoInfoDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\DeliverConsigneeInfoDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderFilterReqDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderFilterRespDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderNotifyReqDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderNotifyRespDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderQueryReqDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderQueryRespDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderReqDto.cs" />
+    <Compile Include="openapi\express\sample\order\dto\OrderRespDto.cs" />
+    <Compile Include="openapi\express\sample\order\tools\OrderTools.cs" />
+    <Compile Include="openapi\express\sample\product\dto\ProductReqDto.cs" />
+    <Compile Include="openapi\express\sample\product\dto\ProductRespDto.cs" />
+    <Compile Include="openapi\express\sample\product\tools\ProductTools.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteIncReqDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteIncRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteInfoApplyReqDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteInfoApplyRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RoutePushApplyReqDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RoutePushApplyRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RoutePushQueryRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RoutePushReqDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RoutePushRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteQueryReqDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteQueryRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteReqDto.cs" />
+    <Compile Include="openapi\express\sample\route\dto\RouteRespDto.cs" />
+    <Compile Include="openapi\express\sample\route\tools\RouteTools.cs" />
+    <Compile Include="openapi\express\sample\security\tools\SecurityTools.cs" />
+    <Compile Include="openapi\express\sample\waybill\dto\WaybillDto.cs" />
+    <Compile Include="openapi\express\sample\waybill\dto\WaybillReqDto.cs" />
+    <Compile Include="openapi\express\sample\waybill\dto\WaybillRespDto.cs" />
+    <Compile Include="openapi\express\sample\waybill\tools\WaybillDownloadTools.cs" />
+    <Compile Include="openapi\express\sample\wms\common\dto\LscmConstant.cs" />
+    <Compile Include="openapi\express\sample\wms\common\dto\LscmRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\common\dto\LscmResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\common\dto\ResponseFailDto.cs" />
+    <Compile Include="openapi\express\sample\wms\common\dto\SailOrderType.cs" />
+    <Compile Include="openapi\express\sample\wms\goods\dto\Item.cs" />
+    <Compile Include="openapi\express\sample\wms\goods\dto\ItemRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\goods\dto\ItemResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\goods\tools\GoodsTools.cs" />
+    <Compile Include="openapi\express\sample\wms\inventory\dto\InventoryBalancePageQueryRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\inventory\dto\InventoryBalancePageQueryResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\inventory\dto\InventoryBalancePageQueryResponseItem.cs" />
+    <Compile Include="openapi\express\sample\wms\inventory\tools\InventoryQueryTools.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseDetail.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderPushInfoHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderPushInfoItem.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderPushInfoReqDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderPushInfoRespDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderPushReqDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderPushRespDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderStatusQueryRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderStatusQueryResponseDetail.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderStatusQueryResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\dto\PurchaseOrderStatusQueryResponseHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\purchaseOrder\tools\PurchaseOrderTools.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderCancelReqDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderCancelRespDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderDetail.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderInvoice.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderInvoiceDetail.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderInvoiceHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderInvoiceReqDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderInvoiceRespDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushInfoContainerItem.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushInfoHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushInfoItem.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushInfoReqDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushInfoRespDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushReqDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderPushRespDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderQueryRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderQueryResponseContainer.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderQueryResponseDetail.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderQueryResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderQueryResponseHeader.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderStatusQueryRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderStatusQueryResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderStatusQueryResponseOrder.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\dto\SailOrderStatusQueryResponseStep.cs" />
+    <Compile Include="openapi\express\sample\wms\salesOrder\tools\SalesOrderTools.cs" />
+    <Compile Include="openapi\express\sample\wms\vendor\dto\VendorRequestDto.cs" />
+    <Compile Include="openapi\express\sample\wms\vendor\dto\VendorResponseDto.cs" />
+    <Compile Include="openapi\express\sample\wms\vendor\tools\VendorTools.cs" />
+    <Compile Include="openapi\security\sample\dto\AccessTokenReqDto.cs" />
+    <Compile Include="openapi\security\sample\dto\TokenQueryReqDto.cs" />
+    <Compile Include="openapi\security\sample\dto\TokenQueryRespDto.cs" />
+    <Compile Include="openapi\security\sample\dto\TokenReqDto.cs" />
+    <Compile Include="openapi\security\sample\dto\TokenRespDto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
