@@ -21,16 +21,18 @@ namespace WindowsFormsApplication1
 
         public static string Form1Value; //  全局变量传给其他界面的有效值
 
+        int key1 = 0, key2 = 0, key3 = 0, key4 = 0, key5 = 0, key6 = 0, key7 = 0, key8 = 0;
+
         String accesstoken = "BAEF8CF266CE4691AB0EA0BB2B6E3706";
         public Form1()
         {
             InitializeComponent();
             comboBox1.Text = "标准快递";
-            comboBox2.Text = "第三方付";
+            comboBox2.Text = "收方付";
             comboBox3.Text = "不需要上门取件";
             comboBox4.Text = "申请";
             comboBox5.Text = "生成";
-            
+            comboBox6.Text = "不需要";
             testgetAccessToken();   //初始化获得AccessToken
             Form1Value = accesstoken;
         }
@@ -50,50 +52,51 @@ namespace WindowsFormsApplication1
             req.head = req2;
             OrderReqDto dto = new OrderReqDto
             {
-                orderId = "OPEN20171130-1",
+                orderId = textBox1.Text.ToString(),
                 expressType = 1,
                 payMethod = 1,
                 needReturnTrackingNo = 0,
                 isDoCall = 1,
                 isGenBillNo = 1,
                 isGenEletricPic = 1,
-                payArea = "",
-                custId = "7550010173",
-                sendStartTime = "2018-4-24 09:30:00",
-                remark = "易碎物品，小心轻放"
+                payArea = textBox3.Text.ToString(),
+                custId = textBox2.Text.ToString(),
+              // sendStartTime = dateTimePicker1.ToString(),
+                sendStartTime = "2014-4-24 09:30:00",
+                remark = textBox4.Text.ToString()
             };
             DeliverConsigneeInfoDto dto2 = new DeliverConsigneeInfoDto
             {
-                address = "神罗科技公司",
-                city = "北京市",
-                company = "神罗科技",
-                contact = "李逍遥",
-                country = "中国",
-                province = "北京",
-                shipperCode = "787564",
-                tel = "010-95123669",
-                mobile = "13612822894"
+                address = textBox12.Text.ToString(),
+                city = "深圳",
+                company = textBox13.Text.ToString(),
+                contact = textBox14.Text.ToString(),
+                country = "南山区",
+                province = textBox16.Text.ToString(),
+                shipperCode = textBox17.Text.ToString(),
+                tel = textBox15.Text.ToString(),
+                mobile = textBox18.Text.ToString()
             };
             DeliverConsigneeInfoDto dto3 = new DeliverConsigneeInfoDto
             {
-                address = "世界第一广场",
+                address = textBox12.Text.ToString(),
                 city = "深圳",
-                company = "顺丰",
-                contact = "张三",
+                company = textBox13.Text.ToString(),
+                contact = textBox14.Text.ToString(),
                 country = "南山区",
-                province = "广东",
-                shipperCode = "518100",
-                tel = "0755-33915561",
-                mobile = "18588413321"
+                province = textBox16.Text.ToString(),
+                shipperCode = textBox17.Text.ToString(),
+                tel = textBox15.Text.ToString(),
+                mobile = textBox18.Text.ToString()
             };
             CargoInfoDto dto4 = new CargoInfoDto
             {
-                parcelQuantity = 1,
-                cargo = "手机",
-                cargoCount = "1000",
-                cargoUnit = "部",
-                cargoWeight = "12",
-                cargoAmount = "5200",
+                parcelQuantity = Convert.ToInt32(textBox19.Text.ToString()),
+                cargo = textBox20.Text.ToString(),
+                cargoCount = textBox21.Text.ToString(),
+                cargoUnit = textBox22.Text.ToString(),
+                cargoWeight = textBox23.Text.ToString(),
+                cargoAmount = textBox24.Text.ToString(),
                 cargoTotalWeight = 12
             };
             List<AddedServiceDto> list = new List<AddedServiceDto>();
@@ -185,11 +188,6 @@ namespace WindowsFormsApplication1
             testgetAccessToken();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
          {
             if ((e.KeyChar >= 'a' && e.KeyChar <= 'z') || (e.KeyChar >= 'A' && e.KeyChar <= 'Z') || (e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8)) 
@@ -264,6 +262,319 @@ namespace WindowsFormsApplication1
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            OrderReqDto dto = new OrderReqDto
+            {
+                orderId = textBox1.Text.ToString(),
+                expressType = 1,
+                payMethod = 1,
+                needReturnTrackingNo = 0,
+                isDoCall = 1,
+                isGenBillNo = 1,
+                isGenEletricPic = 1,
+                payArea = textBox3.Text.ToString(),
+                custId = textBox2.Text.ToString(),
+                //sendStartTime = dateTimePicker1.ToString(),
+                sendStartTime = "2014-4-24 09:30:00",
+                remark = textBox4.Text.ToString()
+            };
+            DeliverConsigneeInfoDto dto2 = new DeliverConsigneeInfoDto
+            {
+                address = textBox5.Text.ToString(),
+                city = "北京市",
+                company = textBox6.Text.ToString(),
+                contact = textBox7.Text.ToString(),
+                country = "中国",
+                province = textBox9.Text.ToString(),
+                shipperCode = textBox10.Text.ToString(),
+                tel = textBox8.Text.ToString(),
+                mobile = textBox11.Text.ToString()
+            };
+            DeliverConsigneeInfoDto dto3 = new DeliverConsigneeInfoDto
+            {
+                address = textBox12.Text.ToString(),
+                city = "深圳",
+                company = textBox13.Text.ToString(),
+                contact = textBox14.Text.ToString(),
+                country = "南山区",
+                province = textBox16.Text.ToString(),
+                shipperCode = textBox17.Text.ToString(),
+                tel = textBox15.Text.ToString(),
+                mobile = textBox18.Text.ToString()
+            };
+            CargoInfoDto dto4 = new CargoInfoDto
+            {
+                parcelQuantity = Convert.ToInt32(textBox19.Text.ToString()),
+                cargo = textBox20.Text.ToString(),
+                cargoCount = textBox21.Text.ToString(),
+                cargoUnit = textBox22.Text.ToString(),
+                cargoWeight = textBox23.Text.ToString(),
+                cargoAmount = textBox24.Text.ToString(),
+                cargoTotalWeight = 12
+            };
+            order_order(dto, dto2, dto3, dto4);
+           // test();
+        }      //下单
+
+        public void order_order(OrderReqDto dto,DeliverConsigneeInfoDto dto2,DeliverConsigneeInfoDto dto3,CargoInfoDto dto4)
+        {
+            string url = "https://open-sbox.sf-express.com/rest/v1.0/order/access_token/" + accesstoken + "/sf_appid/00037521/sf_appkey/21662E074E84B37EB4DBA0F89F9803AA";
+            MessageReq<OrderReqDto> req = new MessageReq<OrderReqDto>();
+            HeadMessageReq req2 = new HeadMessageReq
+            {
+                transType = 200,
+                transMessageId = GettransMessageId()
+            };
+            req.head = req2;
+            List<AddedServiceDto> list = new List<AddedServiceDto>();
+            /*AddedServiceDto item = new AddedServiceDto
+            {
+                name = "COD",
+                value = "20000"
+            };
+            list.Add(item);*/
+            AddedServiceDto dot6 = new AddedServiceDto
+            {/*
+                name = "CUSTID",
+                value = "7552732920"*/
+            };
+            list.Add(dot6);
+            dto.deliverInfo = dto2;
+            dto.consigneeInfo = dto3;
+            dto.cargoInfo = dto4;
+            dto.addedServices = list;
+            req.body = dto;
+            MessageResp<OrderRespDto> resp = OrderTools.order(url, req);
+            string newLine = "信息:" + resp.head.message + "\n";
+            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+            newLine = null;
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+           /* if (textBox1.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox1, "不能为空");
+            }
+            else
+            {
+                key1 = 1;
+                this.errorProvider1.Dispose();
+            }*/
+        }
+
+        private void z(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox1, "不能为空");
+            }
+            else
+            {
+                key1 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox12.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox12, "不能为空");
+            }
+            else
+            {
+                key3 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox2, "不能为空");
+            }
+            else
+            {
+                key2 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox13.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox13, "不能为空");
+            }
+            else
+            {
+                key4 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox14.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox14, "不能为空");
+            }
+            else
+            {
+                key5 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox15.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox15, "不能为空");
+            }
+            else
+            {
+                key6 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox16.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox16, "不能为空");
+            }
+            else
+            {
+                key7 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void textBox20_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox20.Text.ToString().Length == 0)
+            {
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox20, "不能为空");
+            }
+            else
+            {
+                key8 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
+        }
+
+        private void checkkey()
+        {
+            key2 = 1; //暂时改为1
+            int i = key1*key2*key3*key4*key5*key6*key7*key8;
+            if(i == 1)
+            {
+                button1.Enabled = true;
+            }
         }
     }
 }
