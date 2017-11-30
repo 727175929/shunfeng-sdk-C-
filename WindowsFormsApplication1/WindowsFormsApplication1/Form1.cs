@@ -18,6 +18,9 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+
+        public static string Form1Value; //  全局变量传给其他界面的有效值
+
         String accesstoken = "BAEF8CF266CE4691AB0EA0BB2B6E3706";
         public Form1()
         {
@@ -29,6 +32,7 @@ namespace WindowsFormsApplication1
             comboBox5.Text = "生成";
             
             testgetAccessToken();   //初始化获得AccessToken
+            Form1Value = accesstoken;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -41,12 +45,12 @@ namespace WindowsFormsApplication1
             MessageReq<OrderReqDto> req = new MessageReq<OrderReqDto>();
             HeadMessageReq req2 = new HeadMessageReq{
                 transType = 200,
-                transMessageId = "OPEN20160701-011"
+                transMessageId = GettransMessageId()
             };
             req.head = req2;
             OrderReqDto dto = new OrderReqDto
             {
-                orderId = "OPEN20160701-011",
+                orderId = "OPEN20171130-1",
                 expressType = 1,
                 payMethod = 1,
                 needReturnTrackingNo = 0,
@@ -123,7 +127,7 @@ namespace WindowsFormsApplication1
             HeadMessageReq req2 = new HeadMessageReq
             {
                 transType = 0xcb,
-                transMessageId = "201711290916141682"
+                transMessageId = GettransMessageId()
             };
             req.head = req2;
             OrderQueryReqDto dto = new OrderQueryReqDto
@@ -224,6 +228,40 @@ namespace WindowsFormsApplication1
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static string GettransMessageId()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            string t = DateTime.Now.ToString("yyyyMMdd");
+            return t+Convert.ToInt64(ts.TotalSeconds).ToString();
+        }   //获取流水号   流水号格式 20171130+10位（时间戳）
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 下单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 查询单号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 fr2 = new Form2();
+            this.Hide();
+            fr2.Show();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
