@@ -10,8 +10,10 @@ using com.sf.openapi.express.sample.order.tools;
 using com.sf.openapi.express.sample.security.tools;
 using com.sf.openapi.common.util;
 using com.sf.openapi.express.sample.order.dto;
-using com.sf.openapi.common.entity;
 using com.sf.openapi.security.sample.dto;
+using com.sf.openapi.common.entity;
+using com.sf.openapi.express.sample.waybill.dto;
+using com.sf.openapi.express.sample.waybill.tools;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -334,17 +336,101 @@ namespace WindowsFormsApplication1
 
         }
 
+        private short GetexpressType()
+        {
+            if (comboBox1.Text.ToString().Equals("标准快递"))
+                return 1;
+            else if (comboBox1.Text.ToString().Equals("顺丰特惠"))
+                return 2;
+            else if (comboBox1.Text.ToString().Equals("电商特惠"))
+                return 3;
+            else if (comboBox1.Text.ToString().Equals("顺丰次晨"))
+                return 5;
+            else if (comboBox1.Text.ToString().Equals("顺丰即日"))
+                return 6;
+            else if (comboBox1.Text.ToString().Equals("电商速配"))
+                return 7;
+            else
+                return 15;
+        }
+
+        private short GetpayMethod()
+        {
+            if (comboBox2.Text.ToString().Equals("寄方付"))
+                return 1;
+            else if (comboBox2.Text.ToString().Equals("收方付"))
+                return 2;
+            else
+                return 3;
+        }
+
+        private short GetisDocall()
+        {
+            if (comboBox3.Text.ToString().Equals("不需要上门取件"))
+                return 0;
+            else 
+                return 1;
+        }
+
+        private short GetisGenBillno()
+        {
+            if (comboBox4.Text.ToString().Equals("不申请"))
+                return 0;
+            else
+                return 1;
+        }
+
+        private short GetisGenEletricPic()
+        {
+            if (comboBox5.Text.ToString().Equals("生成"))
+                return 1;
+            else
+                return 0;
+        }
+
+        private short GetneedReturnTrackingNo()
+        {
+            if (comboBox5.Text.ToString().Equals("不需要"))
+                return 0;
+            else
+                return 1;
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
+            short expressType = GetexpressType();  //快件产品默认代码1 标准快递
+            short payMethod = GetpayMethod();  //付款方式默认代码2 收方付
+            short isDocall = GetisDocall();   //是否下call（通知收派员上门取件）默认代码 0 不通知  
+            short isGenBillno = GetisGenBillno(); //是否申请运单号 默认值1  申请【默认值】
+            short isGenEletricPic = GetisGenEletricPic(); //是否生成电子运单图片 默认值1 生成
+            short needReturnTrackingNo = GetneedReturnTrackingNo(); // 是否需要签回单号  默认值0 不需要
+
+            String address = textBox5.Text.ToString();
+            if (address.Equals(""))
+            {
+                address = "未填写";
+            }
+            String company = textBox6.Text.ToString();
+            if (company.Equals(""))
+            {
+                company = "未填写";
+            }
+            String contact = textBox7.Text.ToString();
+            if (contact.Equals(""))
+            {
+                contact = "未填写";
+            }
+
+
             OrderReqDto dto = new OrderReqDto
             {
                 orderId = textBox1.Text.ToString(),
-                expressType = 1,
-                payMethod = 1,
-                needReturnTrackingNo = 0,
-                isDoCall = 1,
-                isGenBillNo = 1,
-                isGenEletricPic = 1,
+                expressType = expressType,
+                payMethod = payMethod,
+                needReturnTrackingNo = needReturnTrackingNo,
+                isDoCall = isDocall,
+                isGenBillNo = isGenBillno,
+                isGenEletricPic = isGenEletricPic,
                 payArea = textBox3.Text.ToString(),
                 custId = textBox2.Text.ToString(),
                 //sendStartTime = dateTimePicker1.ToString(),
@@ -353,10 +439,10 @@ namespace WindowsFormsApplication1
             };
             DeliverConsigneeInfoDto dto2 = new DeliverConsigneeInfoDto
             {
-                address = textBox5.Text.ToString(),
+                address = address,
                 city = "北京市",
-                company = textBox6.Text.ToString(),
-                contact = textBox7.Text.ToString(),
+                company = company,
+                contact = contact,
                 country = "中国",
                 province = textBox9.Text.ToString(),
                 shipperCode = textBox10.Text.ToString(),
@@ -451,6 +537,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox1.Text.ToString().Length == 0)
             {
+                key1 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox1, "不能为空");
             }
@@ -466,6 +553,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox12.Text.ToString().Length == 0)
             {
+                key3 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox12, "不能为空");
             }
@@ -481,6 +569,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox2.Text.ToString().Length == 0)
             {
+                key2 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox2, "不能为空");
             }
@@ -496,6 +585,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox13.Text.ToString().Length == 0)
             {
+                key4 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox13, "不能为空");
             }
@@ -511,6 +601,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox14.Text.ToString().Length == 0)
             {
+                key5 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox14, "不能为空");
             }
@@ -526,6 +617,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox15.Text.ToString().Length == 0)
             {
+                key6 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox15, "不能为空");
             }
@@ -541,6 +633,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox16.Text.ToString().Length == 0)
             {
+                key7 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox16, "不能为空");
             }
@@ -556,6 +649,7 @@ namespace WindowsFormsApplication1
         {
             if (textBox20.Text.ToString().Length == 0)
             {
+                key8 = 0;
                 //MessageBox.Show(textBox1.Text.ToString());
                 this.errorProvider1.SetError(this.textBox20, "不能为空");
             }
@@ -571,11 +665,46 @@ namespace WindowsFormsApplication1
         {
             key2 = 1; //暂时改为1
             int i = key1*key2*key3*key4*key5*key6*key7*key8;
-            if(i == 1)
-            {
+            if (i == 1)
                 button1.Enabled = true;
-            }
+            else
+                button1.Enabled = false;
         }
+
+        private void testwaybill()
+        {
+            string url = "https://open-sbox.sf-express.com/rest/v1.0/waybill/image/access_token/" + accesstoken + "/sf_appid/00037521/sf_appkey/21662E074E84B37EB4DBA0F89F9803AA";
+            MessageReq<WaybillReqDto> req = new MessageReq<WaybillReqDto>();
+            HeadMessageReq req2 = new HeadMessageReq
+            {
+                transType = 0xcd,
+                transMessageId = GettransMessageId()
+            };
+            req.head = req2;
+            WaybillReqDto dto = new WaybillReqDto
+            {
+                orderId = textBox1.Text.ToString()
+            };
+            req.body = dto;
+            MessageResp<WaybillRespDto> resp = WaybillDownloadTools.waybillDownload(url, req);
+            //resp.body.images{string[]};
+            String[] a = resp.body.images;
+            Base64ToImg(a[0]);
+        }
+
+        public static Bitmap Base64ToImg(string strBase64)
+        {
+            byte[] bt = Convert.FromBase64String(strBase64);
+            System.IO.MemoryStream stream = new System.IO.MemoryStream(bt);
+            Bitmap bitmap = new Bitmap(stream);
+            bitmap.Save(System.IO.Directory.GetCurrentDirectory().ToString() + GettransMessageId() + ".bmp");
+            return bitmap;
+        }   //64转图片转码
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            testwaybill();
+        }   //测试打印
     }
 }
  
