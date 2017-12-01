@@ -404,7 +404,7 @@ namespace WindowsFormsApplication1
             short isGenBillno = GetisGenBillno(); //是否申请运单号 默认值1  申请【默认值】
             short isGenEletricPic = GetisGenEletricPic(); //是否生成电子运单图片 默认值1 生成
             short needReturnTrackingNo = GetneedReturnTrackingNo(); // 是否需要签回单号  默认值0 不需要
-
+            
             String address = textBox5.Text.ToString();
             if (address.Equals(""))
             {
@@ -420,6 +420,12 @@ namespace WindowsFormsApplication1
             {
                 contact = "未填写";
             }
+            String tel = textBox8.Text.ToString();
+            if (tel.Equals(""))
+            {
+                tel = "未填写";
+            }
+
 
 
             OrderReqDto dto = new OrderReqDto
@@ -446,9 +452,14 @@ namespace WindowsFormsApplication1
                 country = "中国",
                 province = textBox9.Text.ToString(),
                 shipperCode = textBox10.Text.ToString(),
-                tel = textBox8.Text.ToString(),
+                tel = tel,
                 mobile = textBox11.Text.ToString()
             };
+            String tel_2 = textBox18.Text.ToString();
+            if (tel_2.Equals(""))
+            {
+                tel_2 = "未填写";
+            }
             DeliverConsigneeInfoDto dto3 = new DeliverConsigneeInfoDto
             {
                 address = textBox12.Text.ToString(),
@@ -458,7 +469,7 @@ namespace WindowsFormsApplication1
                 country = "南山区",
                 province = textBox16.Text.ToString(),
                 shipperCode = textBox17.Text.ToString(),
-                tel = textBox15.Text.ToString(),
+                tel = tel_2,
                 mobile = textBox18.Text.ToString()
             };
             CargoInfoDto dto4 = new CargoInfoDto
@@ -688,23 +699,30 @@ namespace WindowsFormsApplication1
             req.body = dto;
             MessageResp<WaybillRespDto> resp = WaybillDownloadTools.waybillDownload(url, req);
             //resp.body.images{string[]};
-            String[] a = resp.body.images;
-            Base64ToImg(a[0]);
+            string newLine = "打印信息:" + resp.head.message + "\n";
+            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+            if (resp.head.code.Equals("EX_CODE_OPENAPI_0200"))
+            {
+                String[] a = resp.body.images;
+                Base64ToImg(a[0]);
+            }
         }
 
         public static Bitmap Base64ToImg(string strBase64)
         {
+            String dirctory_bitmap = System.IO.Directory.GetCurrentDirectory().ToString() + GettransMessageId() + ".bmp";
             byte[] bt = Convert.FromBase64String(strBase64);
             System.IO.MemoryStream stream = new System.IO.MemoryStream(bt);
             Bitmap bitmap = new Bitmap(stream);
-            bitmap.Save(System.IO.Directory.GetCurrentDirectory().ToString() + GettransMessageId() + ".bmp");
+            bitmap.Save(dirctory_bitmap);
             return bitmap;
         }   //64转图片转码
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            testwaybill();
-        }   //测试打印
+            testwaybill(); //测试打印
+        }
+ 
     }
 }
  
