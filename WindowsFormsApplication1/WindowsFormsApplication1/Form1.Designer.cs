@@ -330,7 +330,7 @@
             this.查询单号ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(701, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(706, 25);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -840,7 +840,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(84, 454);
+            this.button1.Location = new System.Drawing.Point(72, 519);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(273, 23);
             this.button1.TabIndex = 79;
@@ -854,9 +854,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(399, 454);
+            this.button2.Location = new System.Drawing.Point(406, 519);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 23);
+            this.button2.Size = new System.Drawing.Size(266, 23);
             this.button2.TabIndex = 80;
             this.button2.Text = "打印";
             this.button2.UseVisualStyleBackColor = true;
@@ -866,7 +866,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 489);
+            this.ClientSize = new System.Drawing.Size(706, 554);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label40);

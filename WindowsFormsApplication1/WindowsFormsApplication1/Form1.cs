@@ -61,44 +61,44 @@ namespace WindowsFormsApplication1
                 isDoCall = 1,
                 isGenBillNo = 1,
                 isGenEletricPic = 1,
-                payArea = textBox3.Text.ToString(),
+                payArea = "",
                 custId = textBox2.Text.ToString(),
               // sendStartTime = dateTimePicker1.ToString(),
                 sendStartTime = "2014-4-24 09:30:00",
-                remark = textBox4.Text.ToString()
+                remark = ""
             };
             DeliverConsigneeInfoDto dto2 = new DeliverConsigneeInfoDto
             {
-                address = textBox12.Text.ToString(),
-                city = "深圳",
-                company = textBox13.Text.ToString(),
-                contact = textBox14.Text.ToString(),
-                country = "南山区",
-                province = textBox16.Text.ToString(),
-                shipperCode = textBox17.Text.ToString(),
-                tel = textBox15.Text.ToString(),
-                mobile = textBox18.Text.ToString()
+                address = "",
+                city = "",
+                company = "",
+                contact = "",
+                country = "",
+                province = "",
+                shipperCode = "",
+                tel = "",
+                mobile = ""
             };
             DeliverConsigneeInfoDto dto3 = new DeliverConsigneeInfoDto
             {
-                address = textBox12.Text.ToString(),
-                city = "深圳",
-                company = textBox13.Text.ToString(),
-                contact = textBox14.Text.ToString(),
-                country = "南山区",
-                province = textBox16.Text.ToString(),
-                shipperCode = textBox17.Text.ToString(),
-                tel = textBox15.Text.ToString(),
-                mobile = textBox18.Text.ToString()
+                address = "2",
+                city = "2",
+                company = "2",
+                contact = "2",
+                country = "",
+                province = "2",
+                shipperCode = "",
+                tel = "2",
+                mobile = ""
             };
             CargoInfoDto dto4 = new CargoInfoDto
             {
                 parcelQuantity = Convert.ToInt32(textBox19.Text.ToString()),
                 cargo = textBox20.Text.ToString(),
-                cargoCount = textBox21.Text.ToString(),
-                cargoUnit = textBox22.Text.ToString(),
-                cargoWeight = textBox23.Text.ToString(),
-                cargoAmount = textBox24.Text.ToString(),
+                cargoCount = "",
+                cargoUnit = "",
+                cargoWeight = "",
+                cargoAmount = "",
                 cargoTotalWeight = 12
             };
             List<AddedServiceDto> list = new List<AddedServiceDto>();
@@ -482,8 +482,8 @@ namespace WindowsFormsApplication1
                 cargoAmount = textBox24.Text.ToString(),
                 cargoTotalWeight = 12
             };
-            order_order(dto, dto2, dto3, dto4);
-           // test();
+            //order_order(dto, dto2, dto3, dto4);
+            test();
         }      //下单
 
         public void order_order(OrderReqDto dto,DeliverConsigneeInfoDto dto2,DeliverConsigneeInfoDto dto3,CargoInfoDto dto4)
