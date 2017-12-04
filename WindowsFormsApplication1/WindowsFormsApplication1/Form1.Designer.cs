@@ -108,6 +108,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.查看所有单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -327,7 +336,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.下单ToolStripMenuItem,
-            this.查询单号ToolStripMenuItem});
+            this.查询单号ToolStripMenuItem,
+            this.查看所有单号ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(706, 25);
@@ -862,11 +872,166 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "北京市",
+            "上海市",
+            "天津市",
+            "重庆市",
+            "黑龙江",
+            "吉林省",
+            "辽宁省",
+            "河北省",
+            "内蒙古",
+            "江苏省",
+            "江西省",
+            "浙江省",
+            "安徽省",
+            "福建省",
+            "山西省",
+            "山东省",
+            "河南省",
+            "湖北省",
+            "湖南省",
+            "广东省",
+            "广西省",
+            "海南省",
+            "四川省",
+            "贵州省",
+            "云南省",
+            "陕西省",
+            "甘肃省",
+            "青海省",
+            "宁夏",
+            "新疆",
+            "西藏",
+            "香港",
+            "澳门",
+            "台湾"});
+            this.comboBox7.Location = new System.Drawing.Point(0, 484);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(121, 20);
+            this.comboBox7.TabIndex = 81;
+            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(129, 484);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(121, 20);
+            this.comboBox8.TabIndex = 82;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(15, 469);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(89, 12);
+            this.label41.TabIndex = 83;
+            this.label41.Text = "寄件方所在省份";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(154, 469);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(77, 12);
+            this.label42.TabIndex = 84;
+            this.label42.Text = "寄件方所在市";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(431, 469);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(77, 12);
+            this.label43.TabIndex = 88;
+            this.label43.Text = "收件方所在市";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(292, 469);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(89, 12);
+            this.label44.TabIndex = 87;
+            this.label44.Text = "收件方所在省份";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "北京市",
+            "上海市",
+            "天津市",
+            "重庆市",
+            "黑龙江",
+            "吉林省",
+            "辽宁省",
+            "河北省",
+            "内蒙古",
+            "江苏省",
+            "江西省",
+            "浙江省",
+            "安徽省",
+            "福建省",
+            "山西省",
+            "山东省",
+            "河南省",
+            "湖北省",
+            "湖南省",
+            "广东省",
+            "广西省",
+            "海南省",
+            "四川省",
+            "贵州省",
+            "云南省",
+            "陕西省",
+            "甘肃省",
+            "青海省",
+            "宁夏",
+            "新疆",
+            "西藏",
+            "香港",
+            "澳门",
+            "台湾"});
+            this.comboBox9.Location = new System.Drawing.Point(279, 484);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(121, 20);
+            this.comboBox9.TabIndex = 86;
+            this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
+            // 
+            // comboBox10
+            // 
+            this.comboBox10.FormattingEnabled = true;
+            this.comboBox10.Location = new System.Drawing.Point(415, 484);
+            this.comboBox10.Name = "comboBox10";
+            this.comboBox10.Size = new System.Drawing.Size(121, 20);
+            this.comboBox10.TabIndex = 85;
+            // 
+            // 查看所有单号ToolStripMenuItem
+            // 
+            this.查看所有单号ToolStripMenuItem.Name = "查看所有单号ToolStripMenuItem";
+            this.查看所有单号ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.查看所有单号ToolStripMenuItem.Text = "查看所有单号";
+            this.查看所有单号ToolStripMenuItem.Click += new System.EventHandler(this.查看所有单号ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 554);
+            this.Controls.Add(this.label43);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.comboBox9);
+            this.Controls.Add(this.comboBox10);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.label41);
+            this.Controls.Add(this.comboBox8);
+            this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label40);
@@ -1036,6 +1201,15 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ToolStripMenuItem 查看所有单号ToolStripMenuItem;
     }
 }
 

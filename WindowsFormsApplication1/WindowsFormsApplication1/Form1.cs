@@ -722,6 +722,610 @@ namespace WindowsFormsApplication1
         {
             testwaybill(); //测试打印
         }
+
+        Province provice_city = new Province();
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox7.Text.Equals("安徽省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.anhui.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.anhui[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("山西省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.shandong.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.shandong[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("福建省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.fujian.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.fujian[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("甘肃省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.gansu.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.gansu[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("广东省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.guangdong.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.guangdong[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("澳门"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.aomen.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.aomen[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("广西省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.guangxi.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.guangxi[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("贵州省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.guizhou.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.guizhou[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("内蒙古"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.neimenggu.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.neimenggu[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("海南省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.hainan.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.hainan[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("黑龙江"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.helongjian.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.helongjian[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("湖北省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.hubei.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.hubei[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("湖南省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.hunan.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.hunan[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("吉林省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.jilin.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.jilin[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("江苏省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.jiangsu.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.jiangsu[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("江西省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.jiangxi.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.jiangxi[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("辽宁省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.liaoning.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.liaoning[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("河北省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.hebei.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.hebei[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("河南省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.henan.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.henan[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("北京市"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.beijing.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.beijing[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("宁夏"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.ningxia.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.ningxia[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("青海省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.qinghai.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.qinghai[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("山东省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.shandong.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.shandong[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("陕西省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.shangxi.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.shangxi[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("四川省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.sichuan.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.sichuan[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("上海市"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.shanghai.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.shanghai[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("台湾"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.taiwan.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.taiwan[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("天津市"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.tianjin.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.tianjin[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("香港"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.xianggang.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.xianggang[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("云南省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.yunnan.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.yunnan[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("浙江省"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.zhejiang.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.zhejiang[i]);
+                }
+            }
+            else if (comboBox7.Text.Equals("重庆市"))
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                for (int i = 0; i < provice_city.chongqing.Length; i++)
+                {
+                    comboBox8.Items.Add(provice_city.chongqing[i]);
+                }
+            }
+            else
+            {
+                comboBox8.Text = null;
+                comboBox8.Items.Clear();
+                comboBox8.Items.Add("");
+            }
+        }  //寄件人省市联动
+
+        private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox9.Text.Equals("安徽省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.anhui.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.anhui[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("山西省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.shandong.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.shandong[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("福建省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.fujian.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.fujian[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("甘肃省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.gansu.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.gansu[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("广东省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.guangdong.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.guangdong[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("澳门"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.aomen.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.aomen[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("广西省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.guangxi.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.guangxi[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("贵州省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.guizhou.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.guizhou[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("内蒙古"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.neimenggu.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.neimenggu[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("海南省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.hainan.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.hainan[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("黑龙江"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.helongjian.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.helongjian[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("湖北省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.hubei.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.hubei[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("湖南省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.hunan.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.hunan[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("吉林省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.jilin.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.jilin[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("江苏省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.jiangsu.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.jiangsu[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("江西省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.jiangxi.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.jiangxi[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("辽宁省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.liaoning.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.liaoning[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("河北省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.hebei.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.hebei[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("河南省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.henan.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.henan[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("北京市"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.beijing.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.beijing[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("宁夏"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.ningxia.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.ningxia[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("青海省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.qinghai.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.qinghai[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("山东省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.shandong.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.shandong[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("陕西省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.shangxi.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.shangxi[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("四川省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.sichuan.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.sichuan[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("上海市"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.shanghai.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.shanghai[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("台湾"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.taiwan.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.taiwan[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("天津市"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.tianjin.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.tianjin[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("香港"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.xianggang.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.xianggang[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("云南省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.yunnan.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.yunnan[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("浙江省"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.zhejiang.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.zhejiang[i]);
+                }
+            }
+            else if (comboBox9.Text.Equals("重庆市"))
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                for (int i = 0; i < provice_city.chongqing.Length; i++)
+                {
+                    comboBox10.Items.Add(provice_city.chongqing[i]);
+                }
+            }
+            else
+            {
+                comboBox10.Text = null;
+                comboBox10.Items.Clear();
+                comboBox10.Items.Add("");
+            }
+        }
+
+        private void 查看所有单号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 fr4 = new Form4();
+            this.Hide();
+            fr4.Show();
+        }
  
     }
 }
