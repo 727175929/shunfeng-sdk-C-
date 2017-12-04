@@ -52,6 +52,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.下单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看所有单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -62,8 +63,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -76,8 +75,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -103,7 +100,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -111,12 +107,13 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.查看所有单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -358,6 +355,13 @@
             this.查询单号ToolStripMenuItem.Text = "查询单号";
             this.查询单号ToolStripMenuItem.Click += new System.EventHandler(this.查询单号ToolStripMenuItem_Click);
             // 
+            // 查看所有单号ToolStripMenuItem
+            // 
+            this.查看所有单号ToolStripMenuItem.Name = "查看所有单号ToolStripMenuItem";
+            this.查看所有单号ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.查看所有单号ToolStripMenuItem.Text = "查看所有单号";
+            this.查看所有单号ToolStripMenuItem.Click += new System.EventHandler(this.查看所有单号ToolStripMenuItem_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -451,28 +455,9 @@
             this.label14.Text = "寄件方联系电话";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(108, 373);
-            this.textBox9.MaxLength = 30;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(142, 21);
-            this.textBox9.TabIndex = 36;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 376);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 12);
-            this.label15.TabIndex = 35;
-            this.label15.Text = "寄件方所在省份";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(108, 400);
+            this.textBox10.Location = new System.Drawing.Point(108, 442);
             this.textBox10.MaxLength = 30;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(142, 21);
@@ -482,7 +467,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 403);
+            this.label16.Location = new System.Drawing.Point(12, 445);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 12);
             this.label16.TabIndex = 37;
@@ -491,7 +476,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(108, 427);
+            this.textBox11.Location = new System.Drawing.Point(108, 469);
             this.textBox11.MaxLength = 20;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(142, 21);
@@ -500,7 +485,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 430);
+            this.label17.Location = new System.Drawing.Point(12, 472);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 12);
             this.label17.TabIndex = 39;
@@ -580,27 +565,9 @@
             this.label21.TabIndex = 47;
             this.label21.Text = "收件方联系电话";
             // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(364, 373);
-            this.textBox16.MaxLength = 30;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(142, 21);
-            this.textBox16.TabIndex = 50;
-            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(268, 376);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(89, 12);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "收件方所在省份";
-            // 
             // textBox17
             // 
-            this.textBox17.Location = new System.Drawing.Point(364, 400);
+            this.textBox17.Location = new System.Drawing.Point(364, 442);
             this.textBox17.MaxLength = 30;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(142, 21);
@@ -609,7 +576,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(268, 403);
+            this.label23.Location = new System.Drawing.Point(268, 445);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(89, 12);
             this.label23.TabIndex = 51;
@@ -617,7 +584,7 @@
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(364, 427);
+            this.textBox18.Location = new System.Drawing.Point(364, 469);
             this.textBox18.MaxLength = 20;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(142, 21);
@@ -626,7 +593,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(268, 430);
+            this.label24.Location = new System.Drawing.Point(268, 472);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(65, 12);
             this.label24.TabIndex = 53;
@@ -827,16 +794,6 @@
             this.label38.TabIndex = 76;
             this.label38.Text = "*";
             // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.ForeColor = System.Drawing.Color.Red;
-            this.label39.Location = new System.Drawing.Point(512, 376);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(11, 12);
-            this.label39.TabIndex = 77;
-            this.label39.Text = "*";
-            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -910,55 +867,39 @@
             "香港",
             "澳门",
             "台湾"});
-            this.comboBox7.Location = new System.Drawing.Point(0, 484);
+            this.comboBox7.Location = new System.Drawing.Point(108, 385);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 20);
+            this.comboBox7.Size = new System.Drawing.Size(142, 20);
             this.comboBox7.TabIndex = 81;
+            this.comboBox7.Text = "北京市";
             this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
             // 
             // comboBox8
             // 
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(129, 484);
+            this.comboBox8.Location = new System.Drawing.Point(108, 416);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 20);
+            this.comboBox8.Size = new System.Drawing.Size(142, 20);
             this.comboBox8.TabIndex = 82;
+            this.comboBox8.Text = "海淀区";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(15, 469);
+            this.label41.Location = new System.Drawing.Point(13, 370);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(89, 12);
+            this.label41.Size = new System.Drawing.Size(113, 12);
             this.label41.TabIndex = 83;
-            this.label41.Text = "寄件方所在省份";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(154, 469);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(77, 12);
-            this.label42.TabIndex = 84;
-            this.label42.Text = "寄件方所在市";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(431, 469);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(77, 12);
-            this.label43.TabIndex = 88;
-            this.label43.Text = "收件方所在市";
+            this.label41.Text = "寄件方所在省份市区";
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(292, 469);
+            this.label44.Location = new System.Drawing.Point(268, 370);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(89, 12);
+            this.label44.Size = new System.Drawing.Size(101, 12);
             this.label44.TabIndex = 87;
-            this.label44.Text = "收件方所在省份";
+            this.label44.Text = "收件所在省份市区";
             // 
             // comboBox9
             // 
@@ -998,44 +939,80 @@
             "香港",
             "澳门",
             "台湾"});
-            this.comboBox9.Location = new System.Drawing.Point(279, 484);
+            this.comboBox9.Location = new System.Drawing.Point(364, 385);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 20);
+            this.comboBox9.Size = new System.Drawing.Size(142, 20);
             this.comboBox9.TabIndex = 86;
+            this.comboBox9.Text = "北京市";
             this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
             // 
             // comboBox10
             // 
             this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(415, 484);
+            this.comboBox10.Location = new System.Drawing.Point(364, 416);
             this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 20);
+            this.comboBox10.Size = new System.Drawing.Size(142, 20);
             this.comboBox10.TabIndex = 85;
+            this.comboBox10.Text = "海淀区";
             // 
-            // 查看所有单号ToolStripMenuItem
+            // label45
             // 
-            this.查看所有单号ToolStripMenuItem.Name = "查看所有单号ToolStripMenuItem";
-            this.查看所有单号ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
-            this.查看所有单号ToolStripMenuItem.Text = "查看所有单号";
-            this.查看所有单号ToolStripMenuItem.Click += new System.EventHandler(this.查看所有单号ToolStripMenuItem_Click);
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.Color.Red;
+            this.label45.Location = new System.Drawing.Point(256, 271);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(11, 12);
+            this.label45.TabIndex = 89;
+            this.label45.Text = "*";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.ForeColor = System.Drawing.Color.Red;
+            this.label46.Location = new System.Drawing.Point(256, 298);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(11, 12);
+            this.label46.TabIndex = 90;
+            this.label46.Text = "*";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.ForeColor = System.Drawing.Color.Red;
+            this.label47.Location = new System.Drawing.Point(256, 322);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(11, 12);
+            this.label47.TabIndex = 91;
+            this.label47.Text = "*";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.ForeColor = System.Drawing.Color.Red;
+            this.label48.Location = new System.Drawing.Point(256, 346);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(11, 12);
+            this.label48.TabIndex = 92;
+            this.label48.Text = "*";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 554);
-            this.Controls.Add(this.label43);
+            this.Controls.Add(this.label48);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.label45);
             this.Controls.Add(this.label44);
             this.Controls.Add(this.comboBox9);
             this.Controls.Add(this.comboBox10);
-            this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label40);
-            this.Controls.Add(this.label39);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.label37);
             this.Controls.Add(this.label36);
@@ -1061,8 +1038,6 @@
             this.Controls.Add(this.label24);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.label23);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.textBox14);
@@ -1075,8 +1050,6 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox7);
@@ -1155,8 +1128,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox11;
@@ -1169,8 +1140,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox18;
@@ -1196,20 +1165,21 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ToolStripMenuItem 查看所有单号ToolStripMenuItem;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
     }
 }
 

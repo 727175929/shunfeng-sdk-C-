@@ -1,4 +1,14 @@
-﻿using System;
+﻿using com.sf.openapi.common.entity;
+using com.sf.openapi.common.util;
+using com.sf.openapi.express.sample.order.dto;
+using com.sf.openapi.express.sample.order.tools;
+using com.sf.openapi.express.sample.route.dto;
+using com.sf.openapi.express.sample.route.tools;
+using com.sf.openapi.express.sample.security.tools;
+using com.sf.openapi.express.sample.waybill.dto;
+using com.sf.openapi.express.sample.waybill.tools;
+using com.sf.openapi.security.sample.dto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,14 +16,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using com.sf.openapi.express.sample.order.tools;
-using com.sf.openapi.express.sample.security.tools;
-using com.sf.openapi.common.util;
-using com.sf.openapi.express.sample.order.dto;
-using com.sf.openapi.security.sample.dto;
-using com.sf.openapi.common.entity;
-using com.sf.openapi.express.sample.waybill.dto;
-using com.sf.openapi.express.sample.waybill.tools;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -23,8 +25,13 @@ namespace WindowsFormsApplication1
 
         public static string Form1Value; //  全局变量传给其他界面的有效值
 
-        int key1 = 0, key2 = 0, key3 = 0, key4 = 0, key5 = 0, key6 = 0, key7 = 0, key8 = 0;
+        int key1 = 0, key2 = 0, key3 = 0, key4 = 0, key5 = 0, key6 = 0, key8 = 0;
 
+        int key55 = 0, key66 = 0, key77 = 0, key88 = 0;
+
+        String mainno = "";
+
+        Form4 form4 = new Form4();
         String accesstoken = "BAEF8CF266CE4691AB0EA0BB2B6E3706";
         public Form1()
         {
@@ -187,7 +194,7 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            testgetAccessToken();
+            testgetAccessToken();//刷新
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -263,7 +270,18 @@ namespace WindowsFormsApplication1
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox6.Text.ToString().Length == 0)
+            {
+                key66 = 0;
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox6, "不能为空");
+            }
+            else
+            {
+                key66 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -273,7 +291,18 @@ namespace WindowsFormsApplication1
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox5.Text.ToString().Length == 0)
+            {
+                key55 = 0;
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox5, "不能为空");
+            }
+            else
+            {
+                key55 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -288,12 +317,34 @@ namespace WindowsFormsApplication1
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox7.Text.ToString().Length == 0)
+            {
+                key77 = 0;
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox7, "不能为空");
+            }
+            else
+            {
+                key77 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox8.Text.ToString().Length == 0)
+            {
+                key88 = 0;
+                //MessageBox.Show(textBox1.Text.ToString());
+                this.errorProvider1.SetError(this.textBox8, "不能为空");
+            }
+            else
+            {
+                key88 = 1;
+                this.errorProvider1.Dispose();
+            }
+            checkkey();
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -302,11 +353,6 @@ namespace WindowsFormsApplication1
         }
 
         private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -398,6 +444,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;//等待
             short expressType = GetexpressType();  //快件产品默认代码1 标准快递
             short payMethod = GetpayMethod();  //付款方式默认代码2 收方付
             short isDocall = GetisDocall();   //是否下call（通知收派员上门取件）默认代码 0 不通知  
@@ -423,7 +470,7 @@ namespace WindowsFormsApplication1
             String tel = textBox8.Text.ToString();
             if (tel.Equals(""))
             {
-                tel = "未填写";
+                tel = "-";
             }
 
 
@@ -446,11 +493,11 @@ namespace WindowsFormsApplication1
             DeliverConsigneeInfoDto dto2 = new DeliverConsigneeInfoDto
             {
                 address = address,
-                city = "北京市",
+                city = comboBox8.Text.ToString(),
                 company = company,
                 contact = contact,
-                country = "中国",
-                province = textBox9.Text.ToString(),
+                country = "-",
+                province = comboBox7.Text.ToString(),
                 shipperCode = textBox10.Text.ToString(),
                 tel = tel,
                 mobile = textBox11.Text.ToString()
@@ -463,11 +510,11 @@ namespace WindowsFormsApplication1
             DeliverConsigneeInfoDto dto3 = new DeliverConsigneeInfoDto
             {
                 address = textBox12.Text.ToString(),
-                city = "深圳",
+                city = comboBox10.Text.ToString(),
                 company = textBox13.Text.ToString(),
                 contact = textBox14.Text.ToString(),
-                country = "南山区",
-                province = textBox16.Text.ToString(),
+                country = "-",
+                province = comboBox9.Text.ToString(),
                 shipperCode = textBox17.Text.ToString(),
                 tel = tel_2,
                 mobile = textBox18.Text.ToString()
@@ -482,8 +529,15 @@ namespace WindowsFormsApplication1
                 cargoAmount = textBox24.Text.ToString(),
                 cargoTotalWeight = 12
             };
-            //order_order(dto, dto2, dto3, dto4);
-            test();
+            order_order(dto, dto2, dto3, dto4);
+            mainno = GetmailNo();
+            form4.Insert(textBox1.Text.ToString(), mainno, textBox6.Text.ToString(), textBox5.Text.ToString(), textBox13.Text.ToString(), textBox12.Text.ToString(), textBox20.Text.ToString(), comboBox2.Text.ToString());
+            String newLine = "成功添加数据库 \n";
+            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+             
+            this.Cursor = Cursors.Default;//正常状态
+            
+            // test();
         }      //下单
 
         public void order_order(OrderReqDto dto,DeliverConsigneeInfoDto dto2,DeliverConsigneeInfoDto dto3,CargoInfoDto dto4)
@@ -640,22 +694,6 @@ namespace WindowsFormsApplication1
             checkkey();
         }
 
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox16.Text.ToString().Length == 0)
-            {
-                key7 = 0;
-                //MessageBox.Show(textBox1.Text.ToString());
-                this.errorProvider1.SetError(this.textBox16, "不能为空");
-            }
-            else
-            {
-                key7 = 1;
-                this.errorProvider1.Dispose();
-            }
-            checkkey();
-        }
-
         private void textBox20_TextChanged(object sender, EventArgs e)
         {
             if (textBox20.Text.ToString().Length == 0)
@@ -675,7 +713,7 @@ namespace WindowsFormsApplication1
         private void checkkey()
         {
             key2 = 1; //暂时改为1
-            int i = key1*key2*key3*key4*key5*key6*key7*key8;
+            int i = key1*key2*key3*key4*key5*key6*key8*key55*key66*key77*key88;
             if (i == 1)
                 button1.Enabled = true;
             else
@@ -1325,6 +1363,25 @@ namespace WindowsFormsApplication1
             Form4 fr4 = new Form4();
             this.Hide();
             fr4.Show();
+        }
+
+        private String GetmailNo()
+        {
+            string url = "https://open-sbox.sf-express.com/rest/v1.0/order/query/access_token/" + accesstoken + "/sf_appid/00037521/sf_appkey/21662E074E84B37EB4DBA0F89F9803AA";
+            MessageReq<OrderQueryReqDto> req = new MessageReq<OrderQueryReqDto>();
+            HeadMessageReq req2 = new HeadMessageReq
+            {
+                transType = 0xcb,
+                transMessageId = GettransMessageId()
+            };
+            req.head = req2;
+            OrderQueryReqDto dto = new OrderQueryReqDto
+            {
+                orderId = textBox1.Text.ToString()
+            };
+            req.body = dto;
+            MessageResp<OrderQueryRespDto> resp = OrderTools.orderQuery(url, req);
+            return resp.body.mailNo.ToString();
         }
  
     }
