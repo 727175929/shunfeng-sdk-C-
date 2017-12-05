@@ -38,6 +38,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.查看所有单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.下单ToolStripMenuItem,
-            this.查询单号ToolStripMenuItem});
+            this.查询单号ToolStripMenuItem,
+            this.查看所有单号ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(663, 25);
@@ -125,6 +127,13 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "运单号";
             // 
+            // 查看所有单号ToolStripMenuItem
+            // 
+            this.查看所有单号ToolStripMenuItem.Name = "查看所有单号ToolStripMenuItem";
+            this.查看所有单号ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.查看所有单号ToolStripMenuItem.Text = "查看所有单号";
+            this.查看所有单号ToolStripMenuItem.Click += new System.EventHandler(this.查看所有单号ToolStripMenuItem_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -160,5 +169,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem 查看所有单号ToolStripMenuItem;
     }
 }

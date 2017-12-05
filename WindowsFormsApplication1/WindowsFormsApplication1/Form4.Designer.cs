@@ -32,7 +32,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.下单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查询单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看所有单号ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -73,6 +78,38 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.下单ToolStripMenuItem,
+            this.查询单号ToolStripMenuItem,
+            this.查看所有单号ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(881, 25);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 下单ToolStripMenuItem
+            // 
+            this.下单ToolStripMenuItem.Name = "下单ToolStripMenuItem";
+            this.下单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.下单ToolStripMenuItem.Text = "下单";
+            this.下单ToolStripMenuItem.Click += new System.EventHandler(this.下单ToolStripMenuItem_Click);
+            // 
+            // 查询单号ToolStripMenuItem
+            // 
+            this.查询单号ToolStripMenuItem.Name = "查询单号ToolStripMenuItem";
+            this.查询单号ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.查询单号ToolStripMenuItem.Text = "查询单号";
+            this.查询单号ToolStripMenuItem.Click += new System.EventHandler(this.查询单号ToolStripMenuItem_Click);
+            // 
+            // 查看所有单号ToolStripMenuItem
+            // 
+            this.查看所有单号ToolStripMenuItem.Name = "查看所有单号ToolStripMenuItem";
+            this.查看所有单号ToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.查看所有单号ToolStripMenuItem.Text = "查看所有单号";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -82,11 +119,16 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -96,5 +138,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 下单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查询单号ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查看所有单号ToolStripMenuItem;
     }
 }

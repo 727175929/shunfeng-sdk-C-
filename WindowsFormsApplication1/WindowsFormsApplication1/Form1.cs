@@ -530,10 +530,10 @@ namespace WindowsFormsApplication1
                 cargoTotalWeight = 12
             };
             order_order(dto, dto2, dto3, dto4);
-            mainno = GetmailNo();
+           /* mainno = GetmailNo();
             form4.Insert(textBox1.Text.ToString(), mainno, textBox6.Text.ToString(), textBox5.Text.ToString(), textBox13.Text.ToString(), textBox12.Text.ToString(), textBox20.Text.ToString(), comboBox2.Text.ToString());
             String newLine = "成功添加数据库 \n";
-            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);*/
              
             this.Cursor = Cursors.Default;//正常状态
             
@@ -570,27 +570,24 @@ namespace WindowsFormsApplication1
             req.body = dto;
             MessageResp<OrderRespDto> resp = OrderTools.order(url, req);
             string newLine = "信息:" + resp.head.message + "\n";
-            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+           // richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
             newLine = null;
-        }
-
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void textBox1_MouseLeave(object sender, EventArgs e)
-        {
-           /* if (textBox1.Text.ToString().Length == 0)
+            if(resp.head.code == "EX_CODE_OPENAPI_0200")
             {
-                //MessageBox.Show(textBox1.Text.ToString());
-                this.errorProvider1.SetError(this.textBox1, "不能为空");
+                newLine = "信息:" + resp.head.message + "\n";
+                richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+                mainno = GetmailNo();
+                form4.Insert(textBox1.Text.ToString(), mainno, textBox6.Text.ToString(), textBox5.Text.ToString(), textBox13.Text.ToString(), textBox12.Text.ToString(), textBox20.Text.ToString(), comboBox2.Text.ToString());
+                newLine = "成功添加数据库 \n";
+                richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+                newLine = null;
             }
             else
             {
-                key1 = 1;
-                this.errorProvider1.Dispose();
-            }*/
+                newLine = "信息:" + resp.head.message + "，请尝试其他订单号\n";
+                richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
+                newLine = null;
+            }
         }
 
         private void z(object sender, EventArgs e)
@@ -718,47 +715,6 @@ namespace WindowsFormsApplication1
                 button1.Enabled = true;
             else
                 button1.Enabled = false;
-        }
-
-        private void testwaybill()
-        {
-            string url = "https://open-sbox.sf-express.com/rest/v1.0/waybill/image/access_token/" + accesstoken + "/sf_appid/00037521/sf_appkey/21662E074E84B37EB4DBA0F89F9803AA";
-            MessageReq<WaybillReqDto> req = new MessageReq<WaybillReqDto>();
-            HeadMessageReq req2 = new HeadMessageReq
-            {
-                transType = 0xcd,
-                transMessageId = GettransMessageId()
-            };
-            req.head = req2;
-            WaybillReqDto dto = new WaybillReqDto
-            {
-                orderId = textBox1.Text.ToString()
-            };
-            req.body = dto;
-            MessageResp<WaybillRespDto> resp = WaybillDownloadTools.waybillDownload(url, req);
-            //resp.body.images{string[]};
-            string newLine = "打印信息:" + resp.head.message + "\n";
-            richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
-            if (resp.head.code.Equals("EX_CODE_OPENAPI_0200"))
-            {
-                String[] a = resp.body.images;
-                Base64ToImg(a[0]);
-            }
-        }
-
-        public static Bitmap Base64ToImg(string strBase64)
-        {
-            String dirctory_bitmap = System.IO.Directory.GetCurrentDirectory().ToString() + GettransMessageId() + ".bmp";
-            byte[] bt = Convert.FromBase64String(strBase64);
-            System.IO.MemoryStream stream = new System.IO.MemoryStream(bt);
-            Bitmap bitmap = new Bitmap(stream);
-            bitmap.Save(dirctory_bitmap);
-            return bitmap;
-        }   //64转图片转码
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            testwaybill(); //测试打印
         }
 
         Province provice_city = new Province();
@@ -1382,6 +1338,126 @@ namespace WindowsFormsApplication1
             req.body = dto;
             MessageResp<OrderQueryRespDto> resp = OrderTools.orderQuery(url, req);
             return resp.body.mailNo.ToString();
+        }
+
+        private void textBox21_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox21_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox18_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox17_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox10_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || (e.KeyChar == 8))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox23_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox23_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13 && e.KeyChar != 46)
+            {
+                e.Handled = true;
+            }
+            //输入为负号时，只能输入一次且只能输入一次
+            if (e.KeyChar == 46 && ((TextBox)sender).Text.IndexOf(".") >= 0) e.Handled = true;
+            if (textBox23.Text.Length == 0)
+            {
+                if (e.KeyChar == '.')
+                {
+                    e.Handled = true;             //让操作失效  
+                }
+            } 
+        }
+
+        private void textBox24_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 13 && e.KeyChar != 46)
+            {
+                e.Handled = true;
+            }
+            //输入为负号时，只能输入一次且只能输入一次
+            if (e.KeyChar == 46 && ((TextBox)sender).Text.IndexOf(".") >= 0) e.Handled = true;
+            if (textBox23.Text.Length == 0)
+            {
+                if (e.KeyChar == '.')
+                {
+                    e.Handled = true;             //让操作失效  
+                }
+            } 
+        }
+
+        private void textBox15_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 45 && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 45 && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
         }
  
     }

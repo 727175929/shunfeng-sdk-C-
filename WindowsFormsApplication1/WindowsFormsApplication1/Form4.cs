@@ -86,15 +86,19 @@ namespace WindowsFormsApplication1
             String s = null;
             if (dataGridView1.Columns[e.ColumnIndex].Name == "colbtn")
             {
+                this.Cursor = Cursors.WaitCursor;//等待
                 //占击按钮操作 e.rowindex
                 s = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 testwaybill(s);
+                this.Cursor = Cursors.Default;//正常状态
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "colbtn2")
             {
+                this.Cursor = Cursors.WaitCursor;//等待
                 //占击按钮操作 e.rowindex
                 s = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 RouteQuery(s);
+                this.Cursor = Cursors.Default;//正常状态
             }
         }
 
@@ -230,6 +234,22 @@ namespace WindowsFormsApplication1
             Bitmap bitmap = new Bitmap(stream);
             bitmap.Save(dirctory_bitmap);
             return bitmap;
-        }   //64转图片转码
+        } //64转图片转码
+
+        private void 下单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 fr1 = new Form1();
+            this.Hide();
+            fr1.Show();
+        }
+
+        private void 查询单号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 fr2 = new Form2();
+            this.Hide();
+            fr2.Show();
+        }   
+
+
     }
 }

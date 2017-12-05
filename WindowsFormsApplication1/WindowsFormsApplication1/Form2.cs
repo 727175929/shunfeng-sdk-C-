@@ -145,5 +145,12 @@ namespace WindowsFormsApplication1
                 richTextBox1.Text = richTextBox1.Text.Insert(0, newLine);
             }
         }
+
+        private void 查看所有单号ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 fr4 = new Form4();
+            this.Hide();
+            fr4.Show();
+        }
     }
 }

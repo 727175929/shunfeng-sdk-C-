@@ -103,7 +103,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -157,8 +156,6 @@
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
-            this.textBox1.MouseLeave += new System.EventHandler(this.textBox1_MouseLeave);
             // 
             // label2
             // 
@@ -323,10 +320,11 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dateTimePicker1.CustomFormat = "yy年MM月dd日 HH:mm:ss";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(406, 209);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(142, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(172, 21);
             this.dateTimePicker1.TabIndex = 23;
             // 
             // menuStrip1
@@ -444,6 +442,7 @@
             this.textBox8.Size = new System.Drawing.Size(142, 21);
             this.textBox8.TabIndex = 34;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 
             // label14
             // 
@@ -458,11 +457,12 @@
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(108, 442);
-            this.textBox10.MaxLength = 30;
+            this.textBox10.MaxLength = 6;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(142, 21);
             this.textBox10.TabIndex = 38;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox10_KeyPress);
             // 
             // label16
             // 
@@ -477,10 +477,11 @@
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(108, 469);
-            this.textBox11.MaxLength = 20;
+            this.textBox11.MaxLength = 11;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(142, 21);
             this.textBox11.TabIndex = 40;
+            this.textBox11.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
             // 
             // label17
             // 
@@ -555,6 +556,7 @@
             this.textBox15.Size = new System.Drawing.Size(142, 21);
             this.textBox15.TabIndex = 48;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox15_KeyPress);
             // 
             // label21
             // 
@@ -568,27 +570,29 @@
             // textBox17
             // 
             this.textBox17.Location = new System.Drawing.Point(364, 442);
-            this.textBox17.MaxLength = 30;
+            this.textBox17.MaxLength = 6;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(142, 21);
             this.textBox17.TabIndex = 52;
+            this.textBox17.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox17_KeyPress);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(268, 445);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(89, 12);
+            this.label23.Size = new System.Drawing.Size(65, 12);
             this.label23.TabIndex = 51;
-            this.label23.Text = "收件方所在邮编";
+            this.label23.Text = "收件方邮编";
             // 
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(364, 469);
-            this.textBox18.MaxLength = 20;
+            this.textBox18.MaxLength = 11;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(142, 21);
             this.textBox18.TabIndex = 54;
+            this.textBox18.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox18_KeyPress);
             // 
             // label24
             // 
@@ -651,6 +655,8 @@
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(90, 21);
             this.textBox21.TabIndex = 60;
+            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
+            this.textBox21.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox21_KeyPress);
             // 
             // textBox22
             // 
@@ -676,6 +682,8 @@
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(90, 21);
             this.textBox23.TabIndex = 64;
+            this.textBox23.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
+            this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox23_KeyPress);
             // 
             // label29
             // 
@@ -693,6 +701,7 @@
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(90, 21);
             this.textBox24.TabIndex = 66;
+            this.textBox24.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox24_KeyPress);
             // 
             // label30
             // 
@@ -809,7 +818,7 @@
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(72, 519);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 23);
+            this.button1.Size = new System.Drawing.Size(533, 23);
             this.button1.TabIndex = 79;
             this.button1.Text = "下单";
             this.button1.UseVisualStyleBackColor = true;
@@ -818,16 +827,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(406, 519);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(266, 23);
-            this.button2.TabIndex = 80;
-            this.button2.Text = "打印";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // comboBox7
             // 
@@ -1010,7 +1009,6 @@
             this.Controls.Add(this.label41);
             this.Controls.Add(this.comboBox8);
             this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.label38);
@@ -1168,7 +1166,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.ComboBox comboBox10;
